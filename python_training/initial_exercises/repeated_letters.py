@@ -43,7 +43,7 @@ def is_palindrome(word):
         l -= 1
         i = 0
         while(i<m):
-            if(word[i] == word[l - i]):
+            if(word[i] == word[-(i + 1)]):
                 i += 1
             else:
                 break
@@ -54,4 +54,3 @@ def is_palindrome(word):
 for word in word_list:
     if(is_palindrome(word)):
         print(word)
-        
