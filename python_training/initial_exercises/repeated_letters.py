@@ -35,7 +35,7 @@ for word in word_list:
     if contains:
         print('The word {} contains all the vowels'.format(word))
 
-# get all palindromes
+# find longest palindrome
 def is_palindrome(word):
     l = len(word)
     if(l > 2):
@@ -50,7 +50,20 @@ def is_palindrome(word):
         return i == m
     else:
         return False
-        
-for word in word_list:
+
+w_l = word_list
+i = 0
+l = len(w_l)
+longest = ''
+longest_length = 0    
+while i < l:
+    word = w_l[i]
     if(is_palindrome(word)):
-        print(word)
+        if(len(word)) > longest_length:
+            longest = word
+            longest_length = len(word)
+            
+
+        i += 1
+
+print(longest)
