@@ -21,3 +21,14 @@ for word in shakespeare:
 
 print(counter, novel_words)
 print(timeit.default_timer() - start_time)
+
+counter = 0
+novel_words = []
+start_time = timeit.default_timer()
+for word in shakespeare:
+    if(word not in word_list):
+        counter += 1
+        novel_words.append(word)
+
+print(counter, novel_words)
+print(timeit.default_timer() - start_time)
