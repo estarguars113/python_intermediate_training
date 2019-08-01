@@ -6,7 +6,6 @@ from python_training.utilities.string_utilities import english_word_list
 
 word_list = english_word_list()
 
-
 # get all the letters not appearing double in any word
 for letter in ascii_lowercase: # all letters
     exists = False
@@ -36,6 +35,7 @@ for word in word_list:
         print('The word {} contains all the vowels'.format(word))
 
 # find longest palindrome
+'''
 def is_palindrome(word):
     l = len(word)
     if(l > 2):
@@ -50,20 +50,33 @@ def is_palindrome(word):
         return i == m
     else:
         return False
+'''
+def is_palindrome(word):
+    return word == word[::-1]
+
 
 w_l = word_list
 i = 0
 l = len(w_l)
 longest = ''
-longest_length = 0    
+longest_length = 0
 while i < l:
     word = w_l[i]
     if(is_palindrome(word)):
         if(len(word)) > longest_length:
             longest = word
             longest_length = len(word)
-            
+            # exclude all the shorter words
+            w_l = list(
+                filter(
+                    lambda x: len(x) > longest_length,
+                    w_l
+                    )
+                )
+            l = len(w_l)
+            i = 0
 
         i += 1
+    i += 1
 
 print(longest)

@@ -9,5 +9,7 @@ __pycache__/
 .venv
 env/
 
+.vscode/*
+
 
 python_training.egg-info/
